@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air pollution prediction</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+        * {
+            font-family: 'Nunito', sans-serif;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .main {
+            height: 100vh;
+            width: 100vw;
+            background-color: #ded141f2;
+            background-size: cover;
+        }
+
+        .main .nav {
+            color: white;
+            background: dodgerblue;
+            padding: .6rem;
+        }
+
+        .main .outer {
+            display: flex;
+            height: 70vh;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main .outer form .group {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4rem;
+        }
+        .main .outer form{
+            width: 40vw;
+        }
+        .main .outer form .center{
+            width: 50vw;
+            display: flex;
+            justify-content: center;
+        }
+        .main .outer form .center-btn{
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        .main .outer form .center-btn input[type="submit"]{
+            color: white;
+            background-color: rgba(35, 29, 212, 0.92);
+            padding-left: 2rem;
+            padding-right: 2rem;
+            font-size: 1.5rem;
+            border-radius: 2px;
+            border: none;
+        }
+        .main .center{
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+        }
+        .main .center p{
+            background-color: rgb(255, 30, 41);
+            color: white;
+            padding: 1.5rem;
+            margin-top: 5rem;
+            border-radius: 10px;
+        }
+        .inner{
+            margin: .5rem;
+        }
+        input{
+            height: 2rem;
+            border-radius: 1px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <section class="main">
+        <div class="outer">
+            <form action="/predict" method="POST">
+               <center><h2 style="font-size: 3rem;color:rgba(35, 29, 212, 0.92);font-weight: 900;font-family: 'Times New Roman', Times, serif; ">Air Pollution Prediction</h2></center>
+                <div class="group group-1">
+                    <div class="inner">
+                        <label style=" font-weight: 900;font-size: 1.5rem;color:rgba(4, 4, 3, 0.92);">SO2</label>
+                        <br>
+                        <input type="text" name="SO2" id="SO2" required>
+                    </div>
+                    <div class="inner">
+                        <label style=" font-weight: 900;font-size: 1.5rem;color:rgba(10, 8, 8, 0.92);">NO2</label>
+                        <br>
+                        <input type="text" name="NO2" id="NO2" required>
+                    </div>
+
+                </div>
+                <div class="group group-2">
+                    <div class="inner">
+                        <label style=" font-weight: 900;font-size: 1.5rem;color:rgba(9, 9, 7, 0.92);">RSPM</label>
+                        <br>
+                        <input type="text" name="RSPM" id="RSPM" required>
+                    </div>
+                    <div class="inner">
+                        <label style=" font-weight: 900;font-size: 1.5rem;color:rgba(9, 7, 6, 0.92);">SPM</label>
+                        <br>
+                        <input type="text" name="SPM" id="SPM" required>
+                    </div>
+                    </div>           
+            <div class="center-btn">
+                <input type="submit" value="Predict">
+            
+        </div>
+
+
+    </form>
+        </div>
+       <div class="center">
+            <p>THE OUTPUT IS {{z}}</p>
+    </div>
+    </section>
+</body>
+
+</html>
